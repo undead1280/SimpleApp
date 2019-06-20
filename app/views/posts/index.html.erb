@@ -1,0 +1,15 @@
+<div class="frame">
+  <% @post.each do |post| %>
+    <div class="minframe">
+      <div class="alert alert-light"><hr>
+        <h2><%= t('common.translate')%>: <%= post.name  %></h2>
+        <h4><%= t('common.desc')%>: <%= post.summary %></h4>
+        <h4><%= t('common.category')%>: <%= post.exnd_date %></h4>
+        <h4><%= t('common.author')%>: <%= post.extra %></h4>
+        <div class="img"><%= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %></div>
+        <%= raw post.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'tag tag-primary'}.join(' ') %>
+        <%= link_to t('common.detals'), post_path(post), :class => 'btn btn-outline-primary' %><hr>
+      </div>
+    </div>
+  <% end %></div>
+<%= paginate @post %>

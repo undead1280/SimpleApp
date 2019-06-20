@@ -1,0 +1,11 @@
+<div class="alert alert-light">
+  <hr>
+  <h2><%= t('common.translate')%>: <%= post.name  %></h3>
+  <h4><%= t('common.desc')%>: <%= post.summary %></h4>
+  <h4><%= t('common.category')%>: <%= post.exnd_date %></h4>
+  <h4><%= t('common.author')%>: <%= post.extra %></h4>
+  <br>
+  <%= raw post.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'tag tag-primary'}.join(' ') %>
+  <%= link_to t('common.detals'), post_path(post), :class => 'btn btn-outline-primary' %>
+  <hr>
+</div>

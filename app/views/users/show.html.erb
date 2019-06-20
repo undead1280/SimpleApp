@@ -1,0 +1,21 @@
+<br>
+<br>
+<br>
+<br>
+<p><%= t('common.pr')%>: <%= @user.email %></p>
+<h5> <%= t('common.com')%>:<%= @user.microposts.count %></h5>
+<%= link_to t('common.delprof'), user_path(@user), method: :delete, data: 
+{confirm: "Are you sure?"}, :class => 'btn btn-danger' %>
+<% @user.microposts.each do |micropost| %> <hr>
+  <h3><%= t('common.anon')%>: <%= micropost.content %></h3>
+  <h5><%= time_ago_in_words(micropost.created_at)%> <%= t('common.ago')%> <%= link_to t('common.delete'), [micropost.user, micropost], 
+     method: :delete, data: {confirm: "Are you sure?"}, 
+     :class => 'btn btn-danger' %></h5>
+  <hr>
+<% end %>
+<%= form_for([@user, @user.microposts.build]) do |f| %>
+  <h4><br>
+    <%= f.label t('common.addcomment')%></h4>
+  <%= f.text_field(:content, {:class => 'form-control'}) %><br>
+  <%= f.submit ({:value =>   t('common.sub1'), :class => 'btn btn-success'})%>
+<% end %>

@@ -1,0 +1,26 @@
+<br><br>
+<h2><%= t('common.sgnp')%></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+<br><br>
+  <div class="form-group">
+    <%= f.label t('common.emal') %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , :class => 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label t('common.pass') %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> <%= t('common.mn')%>)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", :class=>'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label t('common.conf')%><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" ,:class => 'form-control' %>
+  </div>
+  <div class="btn btn-success">
+    <%= f.submit ({:value => t('common.sgnp'), :class => 'btn btn-success'})%>
+  </div>
+<% end %>
+<%= render "devise/shared/links" %>

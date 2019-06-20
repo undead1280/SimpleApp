@@ -1,0 +1,33 @@
+ru:
+  datetime:
+    distance_in_words:
+        x_days:
+          one: 'день'
+          other: '%{count} дней'
+        less_than_x_hours:
+          one: 'час'
+          other: '%{count} часов'
+        about_x_hours:
+          one: 'час'
+          other: '%{count} часов'
+        less_than_x_minutes:
+          one: 'меньще чем минута'
+          other: '%{count} минут'     
+        x_minutes:
+          one: 'минута'
+          other: '%{count} минут'    
+  activerecord:
+    models:
+      post:
+        'Фанфик'
+    attributes:
+      post:
+        name: 'Имя'
+        summary: 'Описание'
+        image: 'Изображение'
+        exnd_date: 'Жанр'
+        
+    errors:
+      messages:
+        blank: 'не может быть пустым'
+      

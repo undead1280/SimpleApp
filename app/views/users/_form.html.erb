@@ -1,0 +1,14 @@
+<%= form_for :post, url: user_path(@user), method: :patch do |f| %>
+  <% @user.errors.full_messages.each do |err| %>
+    <div class="alert alert-danger"><%= err %></div>
+  <% end %>
+  <p>
+    <br>
+    Nickname:<br>
+    <br>
+    <%= f.text_field(:name, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    <%= f.submit ({:value => 'Save Project', :class => 'btn btn-success'})%>
+  </p>
+<%end%>

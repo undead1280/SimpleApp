@@ -1,0 +1,18 @@
+ <br>
+<br>
+<%= form_tag destroy_multiple_users_path, method: :delete do %>
+  <table class="footable table table-bordered toggle-arrow-tiny" data-page-size="31" data-filter=#filter>
+    <thead>
+      <tr>
+        <th><%= t('common.user')%></th>
+        <th><%= t('common.emal')%></th>
+        <th><%= t('common.reg')%></th>
+        <th data-sort-ignore="true"><%= t('common.select')%>  <input type="checkbox" id="selectAll"></input></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @users %>
+  </tbody>
+</table>
+<%= submit_tag t('common.selected'), :class => 'btn btn-primary btn-xs' %>
+<% end %>

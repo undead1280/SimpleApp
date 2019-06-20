@@ -1,0 +1,55 @@
+<div class="bod">
+  <br>
+  <br>
+  <br>
+  <br>
+  <h2><%= t('common.translate')%>: <%= @post.name %></h2>
+  <div class="img"><%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %></div>
+  <h3><%= t('common.desc')%>:<%= @post.summary %></h3>
+  <h5><%= t('common.category')%>: <%= @post.exnd_date %></h5>
+  <h5><%= t('common.countof')%>: <%= @post.chapters.count %></h5>
+  <h5><%= t('common.author')%>: <%= @post.extra %></h5>
+  <%= link_to t('common.ed'), edit_post_path(@post), :class => 'btn btn-warning' %>
+  <%= link_to t('common.delete'), post_path(@post), method: :delete, data: {confirm: "Are you sure?"},
+ :class => 'btn btn-danger' %><hr>
+  <br>
+</div>
+<ol>
+  <% @post.chapters.each do |chapter| %>
+    <div class="alert alert-light">
+      <hr>
+      <li>
+        <h5><%= t('common.chapter')%>: <%= chapter.header %></h5>
+      </li>
+      <h5><span class="content"><%= t('common.content')%>: <%= chapter.body.html_safe %></span></h5>
+      <h5><b><%= t('common.pub')%> <%= time_ago_in_words(chapter.created_at)%><%= t('common.ago') %></br></br><%= link_to t('common.delete'),
+      [chapter.post, chapter], method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger' %></h5>
+    <hr>
+  </div>
+<% end %></ol>
+<%= form_for([@post, @post.chapters.build]) do |f| %>
+  <h3><%= t('common.newchapter')%>: </h3>
+  <%= f.text_field(:header, {:class => 'form-control'}) %>
+  <h3><%= t('common.content')%>: </h3>
+  <%= f.trix_editor(:body, {:class => 'editor'}) %><br>
+  <%= f.submit ({:value => t('common.addchapter'), :class => 'btn btn-success'})%>
+<% end %>
+<br>
+<hr>
+<% @post.notes.each do |note| %> <hr>
+  <h3>
+    <h5><%= t('common.comment')%>:</h5>
+     <%= note.content %></h3>
+  <h5><%= time_ago_in_words(note.created_at)%><%= t('common.ago')%><br>
+    <br>
+    <%= link_to t('common.delete'), [note.post, note], 
+     method: :delete, data: {confirm: "Are you sure?"}, 
+     :class => 'btn btn-danger' %></h5>
+  <hr>
+<% end %>
+<%= form_for([@post, @post.notes.build]) do |f| %>
+  <h4><br>
+    <%= f.label t('common.addcomment')%></h4>
+  <%= f.text_field(:content, {:class => 'form-control'}) %><br>
+  <%= f.submit ({:value => t('common.sub1'), :class => 'btn btn-success'})%>
+<% end %>

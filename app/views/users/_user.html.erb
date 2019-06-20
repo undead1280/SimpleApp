@@ -1,0 +1,7 @@
+<tr>
+  <td><%=  user.id %></td>
+  <td><%= link_to user.email, user_path(user) %></td>
+  <td><%= time_ago_in_words(user.created_at) %><%= t('common.ago') %></td>
+  <td><%= link_to t('common.prof'), user_path(user), :class => 'btn btn-outline-primary' %></td>
+  <td><%= check_box_tag "user_ids[]", user.id, false, class: 'selectable' %></td>
+</tr>

@@ -1,0 +1,97 @@
+en:
+  common:
+    translate:
+      'Name of fanfic'
+    desc:
+      'Decription'
+    category:
+      'Category'
+    fantasy:
+      'Fantasctic'
+    adventure:
+      'Adventure'
+    melodram:
+      'Melodramatic'
+    comedy:
+      'Comdedy'
+    action:
+      'Action'
+    tags:
+      'Tags'
+    button:
+      save:
+        'Save'
+    detals:
+      'Details'
+    author:
+      'Author'
+    chapter:
+      'Chapter'
+    addchapter:
+      'Add chapter'
+    ed:
+      'Edit'
+    delete:
+      'Delte'
+    sub:
+      'Submit'
+    content:
+      'Content'
+    countof:
+      'Count of chapters'
+    pub:
+      'published'
+    newchapter:
+      'New chapter'
+    addcomment:
+      'Add comment'
+    comment:
+      'Comment'
+    sub1:
+      'Submit'
+    ago:
+      ' back'
+    user:
+      'User'
+    emal:
+      'Email'
+    select:
+      'Select all'
+    selected:
+      'Delete selected'
+    reg:
+      'Date of regstration'
+    prof:
+      'Profile'
+    delprof:
+      'Delete profile'
+    pr:
+      'Profile of user'
+    com:
+      'Comments in profile'
+    allfan:
+      'All fanfics'
+    allusers:
+      'All users'
+    ext:
+      'Exit'
+    sgnn:
+      'Sign in'
+    sgnp:
+      'Sign up'
+    createfun:
+      'Add fanfic'
+    pass:
+      'Password'
+    remember:
+      'Remember me'
+    conf:
+      'Confirm password'
+    mn:
+      'minimum 6 characters'
+    fog:
+      'Forgot password?'
+    forgot:
+      'Forgot your password?'
+    send:
+      'Send me reset instractions'
