@@ -10,7 +10,7 @@ group :development do
     gem 'sunspot_solr'
 end
 gem 'mini_magick'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'trix'
 gem 'markitup-rails'
 gem "redcarpet"
